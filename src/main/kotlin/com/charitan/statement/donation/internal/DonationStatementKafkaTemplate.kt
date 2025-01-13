@@ -1,4 +1,4 @@
-package com.charitan.statement.donation
+package com.charitan.statement.donation.internal
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -10,7 +10,7 @@ import org.springframework.kafka.requestreply.ReplyingKafkaTemplate
 import org.springframework.kafka.support.KafkaHeaders.REPLY_TOPIC
 
 @Configuration
-class DonationStatementKafkaTemplate {
+internal class DonationStatementKafkaTemplate {
     @Bean
     fun kafkaTemplate(producerFactory: ProducerFactory<String, Any>): KafkaTemplate<String, Any> = KafkaTemplate(producerFactory)
 

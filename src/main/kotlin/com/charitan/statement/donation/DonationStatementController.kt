@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/api/statement/donation")
 @RestController
 class DonationStatementController(
-    private val service: DonationStatementService,
+    private val service: DonationStatementExternalService,
 ) {
     @GetMapping("/{id}")
-    fun get(
+    suspend fun get(
         @PathVariable id: Long,
     ): ResponseEntity<ByteArray> {
         val file = service.getStatementPdf(id)
